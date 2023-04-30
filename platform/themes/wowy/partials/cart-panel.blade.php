@@ -57,12 +57,12 @@
                 <h4><strong class="d-inline-block">{{ __('Sub Total') }}:</strong> <span>{{ format_price(Cart::instance('cart')->rawSubTotal()) }}</span></h4>
             @endif
         </div>
-{{--        <div class="shopping-cart-button">--}}
-{{--            <a href="{{ route('public.cart') }}">{{ __('View cart') }}</a>--}}
+        <div class="shopping-cart-button">
+            <a href="{{ route('public.cart') }}">{{ __('View cart') }}</a>
 {{--            @if (session('tracked_start_checkout'))--}}
 {{--                <a href="{{ route('public.checkout.information', session('tracked_start_checkout')) }}">{{ __('Checkout') }}</a>--}}
 {{--            @endif--}}
-{{--        </div>--}}
+        </div>
     </div>
 @else
     <span>{{ __('No products in the cart.') }}</span>
