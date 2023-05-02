@@ -9,7 +9,10 @@
 
 
 <div class="container mt-5">
-    <h3 class="ps-section__title" style="text-align: center;
+    <h3 class="ps-section__title" style="    color: #103178;
+    font-weight: bold;
+    line-height: 50px;
+    font-size: 30px;text-align: center;
     margin-bottom: 20px;
     font-weight: 600;">Gli ultimi prodotti</h3>
 </div>
