@@ -8,8 +8,8 @@
 @endphp
 
 
-<div class="container">
-    <h3 class="ps-section__title">Latest products</h3>
+<div class="container mt-5">
+    <h3 class="ps-section__title">Gli ultimi prodotti</h3>
 </div>
 <div class="container">
     <div class="row">
