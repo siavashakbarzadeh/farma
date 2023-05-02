@@ -1,5 +1,5 @@
 @php
-$producst=Botble\Ecommerce\Models\Product::all();
+$products=Botble\Ecommerce\Models\Product::all();
 @endphp
 
 <div class="container">
