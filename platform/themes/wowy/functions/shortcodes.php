@@ -55,7 +55,7 @@ app()->booted(function () {
         );
 
         return Theme::partial(
-            'shortcodes.product-category-products-admin-config',
+            'shortcodes.leftadsproduct-admin-config',
             compact('categories', 'attributes')
         );
     });
