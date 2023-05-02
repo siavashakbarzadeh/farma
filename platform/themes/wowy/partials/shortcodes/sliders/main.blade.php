@@ -48,7 +48,7 @@
         <section class="home-slider  position-relative">
             <div class="hero-slider-1 style-2 dot-style-1 dot-style-1-position-1" data-autoplay="{{ $shortcode->is_autoplay ?: 'yes' }}" data-autoplay-speed="{{ in_array($shortcode->autoplay_speed, theme_get_autoplay_speed_options()) ? $shortcode->autoplay_speed : 3000 }}">
                 @foreach($sliders as $slider)
-                <div bg="{{ RvMedia::getImageUrl($slider->image, null, false, RvMedia::getDefaultImage()) }}">
+                <div style="background: url("{{ RvMedia::getImageUrl($slider->image, null, false, RvMedia::getDefaultImage()) }}")">
                     {!! Theme::partial('shortcodes.sliders.content', compact('slider')) !!}
                 </div>
                 @endforeach
