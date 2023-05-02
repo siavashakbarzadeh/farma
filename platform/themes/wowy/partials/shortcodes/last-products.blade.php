@@ -15,7 +15,7 @@
     <div class="row">
 
         @foreach($products as $product)
-            <div class="col-3">
+            <div class="col-2">
                 @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
             </div>
         @endforeach
