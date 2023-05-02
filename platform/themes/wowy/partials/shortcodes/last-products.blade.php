@@ -6,7 +6,11 @@
 @php
     $products=Botble\Ecommerce\Models\Product::latest()->take(4)->get();
 @endphp
-<h3 class="ps-section__title">Latest products</h3>
+
+
+<div class="container">
+    <h3 class="ps-section__title">Latest products</h3>
+</div>
 <div class="container">
     <div class="row">
 
