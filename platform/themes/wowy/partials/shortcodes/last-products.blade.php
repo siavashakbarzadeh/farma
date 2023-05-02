@@ -9,7 +9,9 @@
 
 
 <div class="container mt-5">
-    <h3 class="ps-section__title">Gli ultimi prodotti</h3>
+    <h3 class="ps-section__title" style="text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;">Gli ultimi prodotti</h3>
 </div>
 <div class="container">
     <div class="row">
