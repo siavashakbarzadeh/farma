@@ -4,13 +4,13 @@
 
 {{--</section>--}}
 @php
-    $products=Botble\Ecommerce\Models\Product::all();
+    $products=Botble\Ecommerce\Models\Product::latest()->take(4)->get();
 @endphp
 <div class="container">
     <div class="row">
 
         @foreach($products as $product)
-            <div class="col-4">
+            <div class="col-3">
                 @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
             </div>
         @endforeach
