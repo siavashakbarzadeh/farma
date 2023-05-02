@@ -28,6 +28,14 @@ app()->booted(function () {
         return Theme::partial('shortcodes.site-features-admin-config', compact('attributes'));
     });
 
+    add_shortcode('leftadsproduct', __('leftads product'), __('leftads product'), function ($shortcode) {
+        return Theme::partial('shortcodes.leftadsproduct', compact('shortcode'));
+    });
+
+    shortcode()->setAdminConfig('leftadsproduct', function ($attributes) {
+        return Theme::partial('shortcodes.leftadsproduct-admin-config', compact('attributes'));
+    });
+
     if (is_plugin_active('ecommerce')) {
         add_shortcode(
             'featured-product-categories',
