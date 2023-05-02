@@ -4,7 +4,7 @@
 
 {{--</section>--}}
 @php
-    $products=Botble\Ecommerce\Models\Product::latest()->take(4)->get();
+    $products=Botble\Ecommerce\Models\Product::latest()->take(6)->get();
 @endphp
 
 
