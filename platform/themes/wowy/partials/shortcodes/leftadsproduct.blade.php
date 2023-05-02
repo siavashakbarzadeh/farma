@@ -1,3 +1,7 @@
+@php
+$producst=Botble\Ecommerce\Models\Product::all();
+@endphp
+
 <div class="container">
     <div class="row">
         <div class="col-lg-4">
@@ -14,9 +18,16 @@
         </div>
         <div class="col-lg-8">
             <section class="section-padding-60">
+                @foreach($products as $product)
+                    <div class="col-lg-4">
+                        @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
+                    </div>
+
+                @endforeach
+
                 <div class="container wow fadeIn animated">
 
-                    <featured-products-component url="{{ route('public.ajax.featured-products', ['limit' => BaseHelper::clean($shortcode->{'limit' })]) }}"></featured-products-component>
+
                 </div>
             </section>
         </div>
