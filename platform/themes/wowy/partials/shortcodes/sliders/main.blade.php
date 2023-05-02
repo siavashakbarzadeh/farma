@@ -50,12 +50,12 @@
                 @foreach($sliders as $slider)
                     <div class="single-hero-slider single-animation-wrap">
 {{--                        <div class="container">--}}
-                            <div class="slider-1-height-2 slider-animated-1">
+{{--                            <div class="slider-1-height-2 slider-animated-1">--}}
                                 {!! Theme::partial('shortcodes.sliders.content', compact('slider')) !!}
                                 <div class="single-slider-img single-slider-img-1">
                                     <img src="{{ RvMedia::getImageUrl($slider->image, null, false, RvMedia::getDefaultImage()) }}" alt="image">
                                 </div>
-                            </div>
+{{--                            </div>--}}
 {{--                        </div>--}}
                     </div>
                 @endforeach
