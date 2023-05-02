@@ -19,7 +19,9 @@ $products=Botble\Ecommerce\Models\Product::all();
         <div class="col-lg-8">
             <div class="row">
                 @foreach($products as $product)
+                    <div class="col-4">
                         @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
+                    </div>
                 @endforeach
             </div>
 
