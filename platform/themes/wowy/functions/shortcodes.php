@@ -167,6 +167,27 @@ app()->booted(function () {
         shortcode()->setAdminConfig('product-collections', function ($attributes) {
             return Theme::partial('shortcodes.product-collections-admin-config', compact('attributes'));
         });
+        add_shortcode(
+            'last-products',
+            __('last products'),
+            __('last products'),
+            function ($shortcode) {
+                $productCollections = get_product_collections(
+                    ['status' => BaseStatusEnum::PUBLISHED],
+                    [],
+                    ['id', 'name', 'slug']
+                );
+
+                return Theme::partial('shortcodes.last-products', [
+                    'title' => $shortcode->title,
+                    'productCollections' => ProductCollectionResource::collection($productCollections),
+                ]);
+            }
+        );
+
+        shortcode()->setAdminConfig('last-products', function ($attributes) {
+            return Theme::partial('shortcodes.last-products-admin-config', compact('attributes'));
+        });
 
         add_shortcode(
             'product-category-products',
