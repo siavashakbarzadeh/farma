@@ -17,13 +17,20 @@ $products=Botble\Ecommerce\Models\Product::all();
             </div>
         </div>
         <div class="col-lg-8">
-            <div class="row">
-                @foreach($products as $product)
-                    <div class="col-4">
-                        @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
-                    </div>
-                @endforeach
-            </div>
+            @if ($category)
+                <section class="bg-grey-9 section-padding-60">
+                    <product-category-products-component :category="{{ json_encode($category) }}" :children="{{ json_encode($category->activeChildren) }}" url="{{ route('public.ajax.product-category-products') }}" all="{{ $category->url }}"></product-category-products-component>
+                </section>
+            @endif
+{{--            <div class="row">--}}
+{{--                --}}
+{{--                @foreach($products as $product)--}}
+{{--                    <div class="col-4">--}}
+{{--                        @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--                --}}
+{{--            </div>--}}
 
         </div>
     </div>

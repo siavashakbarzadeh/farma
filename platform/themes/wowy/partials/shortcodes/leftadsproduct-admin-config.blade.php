@@ -20,3 +20,8 @@
         <label class="control-label">{{ __('Limit') }}</label>
         <input type="number" name="limit" value="{{ Arr::get($attributes, 'limit') }}" class="form-control" placeholder="{{ __('Limit') }}">
     </div>
+    <div class="form-group">
+        <label class="control-label">{{ __('Product category ID') }}</label>
+        {!! Form::customSelect('category_id', $categories, Arr::get($attributes, 'category_id')) !!}
+    </div>
+
