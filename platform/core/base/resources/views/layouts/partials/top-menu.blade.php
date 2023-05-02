@@ -36,6 +36,20 @@
                 </li>
             @endif
 
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle dropdown-header-name" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="d-inline d-sm-none"><i class="fas fa-palette"></i></span>
+                    <span class="d-none d-sm-inline">{{ strtoupper(app()->getLocale()) }}</span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right icons-right">
+                    @foreach (Config::get('core.base.admin_languages') as $lang => $language)
+                        @if ($lang != App::getLocale())
+                            <li><a class="list-item" href="{{ route('Admin.lang.switch', $lang) }}"><span>{{$language}}</span></a></li>
+                        @endif
+                    @endforeach
+                </ul>
+            </li>
             <li class="dropdown dropdown-user">
                 <a href="javascript:void(0)" class="dropdown-toggle dropdown-header-name" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="{{ Auth::user()->name }}" class="rounded-circle" src="{{ Auth::user()->avatar_url }}" />
