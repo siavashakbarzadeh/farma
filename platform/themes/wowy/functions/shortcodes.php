@@ -59,6 +59,37 @@ app()->booted(function () {
             compact('categories', 'attributes')
         );
     });
+    add_shortcode('rightadsproduct', __('rightads product'), __('rightads product'), function ($shortcode) {
+        $category = app(ProductCategoryInterface::class)->getFirstBy([
+            'status' => BaseStatusEnum::PUBLISHED,
+            'id' => (int)$shortcode->category_id,
+        ], ['*'], [
+            'activeChildren' => function ($query) {
+                $query->limit(3);
+            },
+        ]);
+
+        if (! $category) {
+            return null;
+        }
+
+        return Theme::partial('shortcodes.rightadsproduct', compact('category' , 'shortcode'));
+    }
+
+    );
+
+    shortcode()->setAdminConfig('rightadsproduct', function ($attributes) {
+        $categories = app(ProductCategoryInterface::class)->pluck(
+            'name',
+            'id',
+            ['status' => BaseStatusEnum::PUBLISHED]
+        );
+
+        return Theme::partial(
+            'shortcodes.rightadsproduct-admin-config',
+            compact('categories', 'attributes')
+        );
+    });
 
     if (is_plugin_active('ecommerce')) {
         add_shortcode(
