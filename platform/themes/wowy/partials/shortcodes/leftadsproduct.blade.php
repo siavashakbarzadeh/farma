@@ -18,9 +18,9 @@ $products=Botble\Ecommerce\Models\Product::all();
         </div>
         <div class="col-lg-8">
             @if ($category)
-                <section class="bg-grey-9 section-padding-60">
+{{--                <section class="bg-grey-9 section-padding-60">--}}
                     <product-category-products-component :category="{{ json_encode($category) }}"  url="{{ route('public.ajax.product-category-products') }}" all="{{ $category->url }}"></product-category-products-component>
-                </section>
+{{--                </section>--}}
             @endif
 {{--            <div class="row">--}}
 {{--                --}}
