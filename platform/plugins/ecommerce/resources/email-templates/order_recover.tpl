@@ -1,6 +1,7 @@
 {{ header }}
 
 <h2>Order is waiting for you to complete!</h2>
+<h2>{{ trans('plugins/ecommerce::email.order_information') }}</h2>
 
 <p>Hi {{ customer_name }},</p>
 <p>We noticed you were intending to buy some products in our store, would you like to continue?</p>
