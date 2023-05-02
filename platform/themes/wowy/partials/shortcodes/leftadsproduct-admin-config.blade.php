@@ -1,7 +1,7 @@
 
     <div class="form-group">
         <label class="control-label">{{ __('Icon') }}</label>
-        {!! Form::mediaImage('icon', Arr::get($attributes, 'icon' . $i)) !!}
+        {!! Form::mediaImage('icon', Arr::get($attributes, 'icon' )) !!}
     </div>
 
     <div class="form-group">
