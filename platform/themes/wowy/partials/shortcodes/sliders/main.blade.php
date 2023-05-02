@@ -49,14 +49,14 @@
             <div class="hero-slider-1 style-2 dot-style-1 dot-style-1-position-1" data-autoplay="{{ $shortcode->is_autoplay ?: 'yes' }}" data-autoplay-speed="{{ in_array($shortcode->autoplay_speed, theme_get_autoplay_speed_options()) ? $shortcode->autoplay_speed : 3000 }}">
                 @foreach($sliders as $slider)
                     <div class="single-hero-slider single-animation-wrap">
-                        <div class="container">
+{{--                        <div class="container">--}}
                             <div class="slider-1-height-2 slider-animated-1">
                                 {!! Theme::partial('shortcodes.sliders.content', compact('slider')) !!}
                                 <div class="single-slider-img single-slider-img-1">
                                     <img src="{{ RvMedia::getImageUrl($slider->image, null, false, RvMedia::getDefaultImage()) }}" alt="image">
                                 </div>
                             </div>
-                        </div>
+{{--                        </div>--}}
                     </div>
                 @endforeach
             </div>
