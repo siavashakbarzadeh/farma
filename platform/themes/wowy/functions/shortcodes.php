@@ -29,8 +29,23 @@ app()->booted(function () {
     });
 
     add_shortcode('leftadsproduct', __('leftads product'), __('leftads product'), function ($shortcode) {
-        return Theme::partial('shortcodes.leftadsproduct', compact('shortcode'));
-    });
+        $category = app(ProductCategoryInterface::class)->getFirstBy([
+            'status' => BaseStatusEnum::PUBLISHED,
+            'id' => (int)$shortcode->category_id,
+        ], ['*'], [
+            'activeChildren' => function ($query) {
+                $query->limit(3);
+            },
+        ]);
+
+        if (! $category) {
+            return null;
+        }
+
+        return Theme::partial('shortcodes.leftadsproduct', compact('category' , 'shortcode'));
+    }
+
+    );
 
     shortcode()->setAdminConfig('leftadsproduct', function ($attributes) {
         return Theme::partial('shortcodes.leftadsproduct-admin-config', compact('attributes'));
