@@ -48,7 +48,16 @@ app()->booted(function () {
     );
 
     shortcode()->setAdminConfig('leftadsproduct', function ($attributes) {
-        return Theme::partial('shortcodes.leftadsproduct-admin-config', compact('attributes'));
+        $categories = app(ProductCategoryInterface::class)->pluck(
+            'name',
+            'id',
+            ['status' => BaseStatusEnum::PUBLISHED]
+        );
+
+        return Theme::partial(
+            'shortcodes.product-category-products-admin-config',
+            compact('categories', 'attributes')
+        );
     });
 
     if (is_plugin_active('ecommerce')) {
