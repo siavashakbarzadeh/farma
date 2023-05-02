@@ -12,12 +12,12 @@
     <h3 class="ps-section__title" style="
     font-size: 30px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 26px;
     margin-top: 92px;
     font-weight: 600;">Gli ultimi prodotti</h3>
 </div>
 <div class="container">
-    <div class="row">
+    <div class=" owl-carousel owl-theme featured-brands-carousel ">
 
         @foreach($products as $product)
             <div class="col-2">
