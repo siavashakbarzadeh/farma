@@ -17,19 +17,12 @@ $products=Botble\Ecommerce\Models\Product::all();
             </div>
         </div>
         <div class="col-lg-8">
-            <section class="section-padding-60">
+            <div class="row">
                 @foreach($products as $product)
-                    <div class="col-lg-4">
                         @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
-                    </div>
-
                 @endforeach
+            </div>
 
-                <div class="container wow fadeIn animated">
-
-
-                </div>
-            </section>
         </div>
     </div>
 
