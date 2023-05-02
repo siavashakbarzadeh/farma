@@ -6,15 +6,18 @@
 @php
     $products=Botble\Ecommerce\Models\Product::all();
 @endphp
-<div class="row">
+<div class="container">
+    <div class="row">
 
-    @foreach($products as $product)
-        <div class="col-4">
-            @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
-        </div>
-    @endforeach
+        @foreach($products as $product)
+            <div class="col-4">
+                @include(Theme::getThemeNamespace() . '::views.ecommerce.includes.product-item', compact('product'))
+            </div>
+        @endforeach
 
+    </div>
 </div>
+
 {{--<section class="section-padding-60">--}}
 {{--    <div class="container">--}}
 {{--        <h3 class="section-title style-1 mb-30 wow fadeIn animated">{!! BaseHelper::clean($title) !!}</h3>--}}
