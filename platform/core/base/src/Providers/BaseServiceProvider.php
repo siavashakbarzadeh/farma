@@ -10,6 +10,7 @@ use Botble\Base\Http\Middleware\CoreMiddleware;
 use Botble\Base\Http\Middleware\DisableInDemoModeMiddleware;
 use Botble\Base\Http\Middleware\HttpsProtocolMiddleware;
 use Botble\Base\Http\Middleware\LocaleMiddleware;
+use Botble\Base\Http\Middleware\TestMiddleware;
 use Botble\Base\Models\AdminNotification;
 use Botble\Base\Models\MetaBox as MetaBoxModel;
 use Botble\Base\Repositories\Caches\MetaBoxCacheDecorator;
@@ -127,6 +128,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        $this->app['router']->pushMiddlewareToGroup('web', TestMiddleware::class);
         $this
             ->loadAndPublishConfigurations(['permissions', 'assets'])
             ->loadAndPublishViews()
