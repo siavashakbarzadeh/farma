@@ -128,6 +128,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        dd("salam");
         $this
             ->loadAndPublishConfigurations(['permissions', 'assets'])
             ->loadAndPublishViews()
