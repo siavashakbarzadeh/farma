@@ -52,6 +52,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function register(): void
     {
+        dd("salam");
         $this->app->bind(ResourceRegistrar::class, function ($app) {
             return new CustomResourceRegistrar($app['router']);
         });
@@ -128,7 +129,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        dd("salam");
+
         $this
             ->loadAndPublishConfigurations(['permissions', 'assets'])
             ->loadAndPublishViews()
