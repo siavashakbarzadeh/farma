@@ -16,7 +16,7 @@ class AdminLanguageManager
      */
     public function handle(Request $request, Closure $next)
     {
-        dd($request->route()->getName());
+//        dd($request->route()->getName());
         return $next($request);
     }
 }
