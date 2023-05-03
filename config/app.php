@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \Botble\Base\Providers\BaseServiceProvider::class,
 
         /*
          * Application Service Providers...
