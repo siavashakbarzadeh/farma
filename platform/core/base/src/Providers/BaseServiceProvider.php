@@ -136,6 +136,8 @@ class BaseServiceProvider extends ServiceProvider
             ->loadMigrations()
             ->publishAssets();
 
+        dd("ok");
+
         Schema::defaultStringLength(191);
 
         $config = $this->app['config'];
