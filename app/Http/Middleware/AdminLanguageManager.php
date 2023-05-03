@@ -20,7 +20,7 @@ class AdminLanguageManager
     public function handle(Request $request, Closure $next)
     {
 //        dd($request->route()->getName());admin.order.index
-        dd('ok');
+//        dd('ok');
         if (Session::has('applocale') && array_key_exists(Session::get('applocale'),Config::get('core.base.admin_languages'))){
             App::setLocale(Session::get('applocale'));
         }
