@@ -136,7 +136,7 @@ class BaseServiceProvider extends ServiceProvider
             ->loadMigrations()
             ->publishAssets();
 
-//        dd("ok");
+        dd("ok");
 
         Schema::defaultStringLength(191);
 
