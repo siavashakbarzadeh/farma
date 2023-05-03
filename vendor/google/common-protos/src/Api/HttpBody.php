@@ -25,10 +25,8 @@ use Google\Protobuf\Internal\GPBUtil;
  *       google.api.HttpBody http_body = 2;
  *     }
  *     service ResourceService {
- *       rpc GetResource(GetResourceRequest)
- *         returns (google.api.HttpBody);
- *       rpc UpdateResource(google.api.HttpBody)
- *         returns (google.protobuf.Empty);
+ *       rpc GetResource(GetResourceRequest) returns (google.api.HttpBody);
+ *       rpc UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty);
  *     }
  * Example with streaming methods:
  *     service CaldavService {
@@ -45,17 +43,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class HttpBody extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The HTTP Content-Type header value specifying the content type of the body.
+     * The HTTP Content-Type string representing the content type of the body.
      *
      * Generated from protobuf field <code>string content_type = 1;</code>
      */
-    protected $content_type = '';
+    private $content_type = '';
     /**
-     * The HTTP request/response body as raw binary.
+     * HTTP body binary data.
      *
      * Generated from protobuf field <code>bytes data = 2;</code>
      */
-    protected $data = '';
+    private $data = '';
     /**
      * Application specific response metadata. Must be set in the first response
      * for streaming APIs.
@@ -71,10 +69,10 @@ class HttpBody extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $content_type
-     *           The HTTP Content-Type header value specifying the content type of the body.
+     *           The HTTP Content-Type string representing the content type of the body.
      *     @type string $data
-     *           The HTTP request/response body as raw binary.
-     *     @type array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $extensions
+     *           HTTP body binary data.
+     *     @type \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $extensions
      *           Application specific response metadata. Must be set in the first response
      *           for streaming APIs.
      * }
@@ -85,7 +83,7 @@ class HttpBody extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The HTTP Content-Type header value specifying the content type of the body.
+     * The HTTP Content-Type string representing the content type of the body.
      *
      * Generated from protobuf field <code>string content_type = 1;</code>
      * @return string
@@ -96,7 +94,7 @@ class HttpBody extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The HTTP Content-Type header value specifying the content type of the body.
+     * The HTTP Content-Type string representing the content type of the body.
      *
      * Generated from protobuf field <code>string content_type = 1;</code>
      * @param string $var
@@ -111,7 +109,7 @@ class HttpBody extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The HTTP request/response body as raw binary.
+     * HTTP body binary data.
      *
      * Generated from protobuf field <code>bytes data = 2;</code>
      * @return string
@@ -122,7 +120,7 @@ class HttpBody extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The HTTP request/response body as raw binary.
+     * HTTP body binary data.
      *
      * Generated from protobuf field <code>bytes data = 2;</code>
      * @param string $var
@@ -153,7 +151,7 @@ class HttpBody extends \Google\Protobuf\Internal\Message
      * for streaming APIs.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Any extensions = 3;</code>
-     * @param array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtensions($var)

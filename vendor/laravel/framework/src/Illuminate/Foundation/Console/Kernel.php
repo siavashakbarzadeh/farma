@@ -223,9 +223,11 @@ class Kernel implements KernelContract
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+//    public static function schedule(Schedule $schedule)
     protected function schedule(Schedule $schedule)
     {
-        //
+
+
     }
 
     /**
@@ -247,7 +249,7 @@ class Kernel implements KernelContract
      */
     protected function commands()
     {
-        //
+
     }
 
     /**

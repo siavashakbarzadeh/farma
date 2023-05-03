@@ -26,33 +26,33 @@ class ConfigChange extends \Google\Protobuf\Internal\Message
      * 'key' is used. If the field has no unique identifier, the numeric index
      * is used.
      * Examples:
-     * - visibility.rules[selector=="google.LibraryService.ListBooks"].restriction
+     * - visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
      * - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value
      * - logging.producer_destinations[0]
      *
      * Generated from protobuf field <code>string element = 1;</code>
      */
-    protected $element = '';
+    private $element = '';
     /**
      * Value of the changed object in the old Service configuration,
      * in JSON format. This field will not be populated if ChangeType == ADDED.
      *
      * Generated from protobuf field <code>string old_value = 2;</code>
      */
-    protected $old_value = '';
+    private $old_value = '';
     /**
      * Value of the changed object in the new Service configuration,
      * in JSON format. This field will not be populated if ChangeType == REMOVED.
      *
      * Generated from protobuf field <code>string new_value = 3;</code>
      */
-    protected $new_value = '';
+    private $new_value = '';
     /**
      * The type for this change, either ADDED, REMOVED, or MODIFIED.
      *
      * Generated from protobuf field <code>.google.api.ChangeType change_type = 4;</code>
      */
-    protected $change_type = 0;
+    private $change_type = 0;
     /**
      * Collection of advice provided for this change, useful for determining the
      * possible impact of this change.
@@ -74,7 +74,7 @@ class ConfigChange extends \Google\Protobuf\Internal\Message
      *           'key' is used. If the field has no unique identifier, the numeric index
      *           is used.
      *           Examples:
-     *           - visibility.rules[selector=="google.LibraryService.ListBooks"].restriction
+     *           - visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
      *           - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value
      *           - logging.producer_destinations[0]
      *     @type string $old_value
@@ -85,7 +85,7 @@ class ConfigChange extends \Google\Protobuf\Internal\Message
      *           in JSON format. This field will not be populated if ChangeType == REMOVED.
      *     @type int $change_type
      *           The type for this change, either ADDED, REMOVED, or MODIFIED.
-     *     @type array<\Google\Api\Advice>|\Google\Protobuf\Internal\RepeatedField $advices
+     *     @type \Google\Api\Advice[]|\Google\Protobuf\Internal\RepeatedField $advices
      *           Collection of advice provided for this change, useful for determining the
      *           possible impact of this change.
      * }
@@ -102,7 +102,7 @@ class ConfigChange extends \Google\Protobuf\Internal\Message
      * 'key' is used. If the field has no unique identifier, the numeric index
      * is used.
      * Examples:
-     * - visibility.rules[selector=="google.LibraryService.ListBooks"].restriction
+     * - visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
      * - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value
      * - logging.producer_destinations[0]
      *
@@ -121,7 +121,7 @@ class ConfigChange extends \Google\Protobuf\Internal\Message
      * 'key' is used. If the field has no unique identifier, the numeric index
      * is used.
      * Examples:
-     * - visibility.rules[selector=="google.LibraryService.ListBooks"].restriction
+     * - visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
      * - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value
      * - logging.producer_destinations[0]
      *
@@ -236,7 +236,7 @@ class ConfigChange extends \Google\Protobuf\Internal\Message
      * possible impact of this change.
      *
      * Generated from protobuf field <code>repeated .google.api.Advice advices = 5;</code>
-     * @param array<\Google\Api\Advice>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Api\Advice[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdvices($var)

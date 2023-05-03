@@ -137,13 +137,6 @@ class Order extends BaseResource
     public $redirectUrl;
 
     /**
-     * Cancel URL set on this payment
-     *
-     * @var string
-     */
-    public $cancelUrl;
-
-    /**
      * UTC datetime the order was created in ISO-8601 format.
      *
      * @example "2013-12-25T10:30:54+00:00"
@@ -205,15 +198,6 @@ class Order extends BaseResource
      * @var array|object[]
      */
     public $lines;
-
-    /**
-     * For digital goods, you must make sure to apply the VAT rate from your customer’s country in most jurisdictions.
-     * Use this parameter to restrict the payment methods available to your customer to methods from the billing country
-     * only.
-     *
-     * @var bool
-     */
-    public $shopperCountryMustMatchBillingCountry;
 
     /**
      * An object with several URL objects relevant to the customer. Every URL object will contain an href and a type field.
@@ -506,7 +490,6 @@ class Order extends BaseResource
             "shippingAddress" => $this->shippingAddress,
             "orderNumber" => $this->orderNumber,
             "redirectUrl" => $this->redirectUrl,
-            "cancelUrl" => $this->cancelUrl,
             "webhookUrl" => $this->webhookUrl,
         ];
 

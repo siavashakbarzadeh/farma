@@ -62,25 +62,25 @@ class Quaternion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>double x = 1;</code>
      */
-    protected $x = 0.0;
+    private $x = 0.0;
     /**
      * The y component.
      *
      * Generated from protobuf field <code>double y = 2;</code>
      */
-    protected $y = 0.0;
+    private $y = 0.0;
     /**
      * The z component.
      *
      * Generated from protobuf field <code>double z = 3;</code>
      */
-    protected $z = 0.0;
+    private $z = 0.0;
     /**
      * The scalar component.
      *
      * Generated from protobuf field <code>double w = 4;</code>
      */
-    protected $w = 0.0;
+    private $w = 0.0;
 
     /**
      * Constructor.

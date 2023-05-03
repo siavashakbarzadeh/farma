@@ -38,9 +38,8 @@ function getCookie(name) {
 
 function tryItOut(endpointId) {
     document.querySelector(`#btn-tryout-${endpointId}`).hidden = true;
+    document.querySelector(`#btn-executetryout-${endpointId}`).hidden = false;
     document.querySelector(`#btn-canceltryout-${endpointId}`).hidden = false;
-    const executeBtn = document.querySelector(`#btn-executetryout-${endpointId}`).hidden = false;
-    executeBtn.disabled = false;
 
     // Show all input fields
     document.querySelectorAll(`input[data-endpoint=${endpointId}],label[data-endpoint=${endpointId}]`)
@@ -64,7 +63,7 @@ function cancelTryOut(endpointId) {
     document.querySelector(`#btn-tryout-${endpointId}`).hidden = false;
     const executeBtn = document.querySelector(`#btn-executetryout-${endpointId}`);
     executeBtn.hidden = true;
-    executeBtn.textContent = executeBtn.dataset.initialText;
+    executeBtn.textContent = "Send Request 💥";
     document.querySelector(`#btn-canceltryout-${endpointId}`).hidden = true;
     // Hide inputs
     document.querySelectorAll(`input[data-endpoint=${endpointId}],label[data-endpoint=${endpointId}]`)
@@ -89,7 +88,7 @@ function makeAPICall(method, path, body = {}, query = {}, headers = {}, endpoint
         body = JSON.stringify(body)
     }
 
-    const url = new URL(window.tryItOutBaseUrl + '/' + path.replace(/^\//, ''));
+    const url = new URL(window.baseUrl + '/' + path.replace(/^\//, ''));
 
     // We need this function because if you try to set an array or object directly to a URLSearchParams object,
     // you'll get [object Object] or the array.toString()
@@ -119,7 +118,7 @@ function makeAPICall(method, path, body = {}, query = {}, headers = {}, endpoint
         headers,
         body: method === 'GET' ? undefined : body,
         signal: window.abortControllers[endpointId].signal,
-        referrer: window.tryItOutBaseUrl,
+        referrer: window.baseUrl,
         mode: 'cors',
         credentials: 'same-origin',
     })
@@ -150,7 +149,7 @@ function handleResponse(endpointId, response, status, headers) {
     } catch (e) {
 
     }
-    responseContentEl.textContent = response === '' ? responseContentEl.dataset.emptyResponseText : response;
+    responseContentEl.textContent = response === '' ? '<Empty response>' : response;
     isJson && window.hljs.highlightElement(responseContentEl);
     const statusEl = document.querySelector('#execution-response-status-' + endpointId);
     statusEl.textContent = ` (${status})`;
@@ -165,8 +164,10 @@ function handleError(endpointId, err) {
 
     // Show error views
     let errorMessage = err.message || err;
-    const $errorMessageEl = document.querySelector('#execution-error-message-' + endpointId);
-    $errorMessageEl.textContent = errorMessage + $errorMessageEl.textContent;
+    errorMessage += "\n\nTip: Check that you're properly connected to the network.";
+    errorMessage += "\nIf you're a maintainer of ths API, verify that your API is running and you've enabled CORS.";
+    errorMessage += "\nYou can check the Dev Tools console for debugging information.";
+    document.querySelector('#execution-error-message-' + endpointId).textContent = errorMessage;
     const errorEl = document.querySelector('#execution-error-' + endpointId);
     errorEl.hidden = false;
     errorEl.scrollIntoView({behavior: "smooth", block: "center"});
@@ -175,8 +176,7 @@ function handleError(endpointId, err) {
 
 async function executeTryOut(endpointId, form) {
     const executeBtn = document.querySelector(`#btn-executetryout-${endpointId}`);
-    executeBtn.textContent = executeBtn.dataset.loadingText;
-    executeBtn.disabled = true;
+    executeBtn.textContent = "⏱ Sending...";
     executeBtn.scrollIntoView({behavior: "smooth", block: "center"});
 
     let body;
@@ -266,7 +266,6 @@ async function executeTryOut(endpointId, form) {
             handleError(endpointId, err);
         })
         .finally(() => {
-            executeBtn.disabled = false;
-            executeBtn.textContent = executeBtn.dataset.initialText;
+            executeBtn.textContent = "Send Request 💥";
         });
 }

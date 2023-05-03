@@ -22,7 +22,7 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
      */
-    protected $action = 0;
+    private $action = 0;
     /**
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
@@ -30,7 +30,7 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string role = 2;</code>
      */
-    protected $role = '';
+    private $role = '';
     /**
      * A single identity requesting access for a Cloud Platform resource.
      * Follows the same format of Binding.members.
@@ -38,13 +38,13 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string member = 3;</code>
      */
-    protected $member = '';
+    private $member = '';
     /**
      * The condition that is associated with this binding.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
      */
-    protected $condition = null;
+    private $condition = null;
 
     /**
      * Constructor.
@@ -94,7 +94,7 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      */
     public function setAction($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Iam\V1\BindingDelta\Action::class);
+        GPBUtil::checkEnum($var, \Google\Cloud\Iam\V1\BindingDelta_Action::class);
         $this->action = $var;
 
         return $this;
@@ -164,21 +164,11 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      * The condition that is associated with this binding.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
-     * @return \Google\Type\Expr|null
+     * @return \Google\Type\Expr
      */
     public function getCondition()
     {
         return $this->condition;
-    }
-
-    public function hasCondition()
-    {
-        return isset($this->condition);
-    }
-
-    public function clearCondition()
-    {
-        unset($this->condition);
     }
 
     /**

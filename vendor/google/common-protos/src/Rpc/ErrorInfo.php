@@ -36,9 +36,8 @@ class ErrorInfo extends \Google\Protobuf\Internal\Message
     /**
      * The reason of the error. This is a constant value that identifies the
      * proximate cause of the error. Error reasons are unique within a particular
-     * domain of errors. This should be at most 63 characters and match a
-     * regular expression of `[A-Z][A-Z0-9_]+[A-Z0-9]`, which represents
-     * UPPER_SNAKE_CASE.
+     * domain of errors. This should be at most 63 characters and match
+     * /[A-Z0-9_]+/.
      *
      * Generated from protobuf field <code>string reason = 1;</code>
      */
@@ -76,9 +75,8 @@ class ErrorInfo extends \Google\Protobuf\Internal\Message
      *     @type string $reason
      *           The reason of the error. This is a constant value that identifies the
      *           proximate cause of the error. Error reasons are unique within a particular
-     *           domain of errors. This should be at most 63 characters and match a
-     *           regular expression of `[A-Z][A-Z0-9_]+[A-Z0-9]`, which represents
-     *           UPPER_SNAKE_CASE.
+     *           domain of errors. This should be at most 63 characters and match
+     *           /[A-Z0-9_]+/.
      *     @type string $domain
      *           The logical grouping to which the "reason" belongs. The error domain
      *           is typically the registered service name of the tool or product that
@@ -104,9 +102,8 @@ class ErrorInfo extends \Google\Protobuf\Internal\Message
     /**
      * The reason of the error. This is a constant value that identifies the
      * proximate cause of the error. Error reasons are unique within a particular
-     * domain of errors. This should be at most 63 characters and match a
-     * regular expression of `[A-Z][A-Z0-9_]+[A-Z0-9]`, which represents
-     * UPPER_SNAKE_CASE.
+     * domain of errors. This should be at most 63 characters and match
+     * /[A-Z0-9_]+/.
      *
      * Generated from protobuf field <code>string reason = 1;</code>
      * @return string
@@ -119,9 +116,8 @@ class ErrorInfo extends \Google\Protobuf\Internal\Message
     /**
      * The reason of the error. This is a constant value that identifies the
      * proximate cause of the error. Error reasons are unique within a particular
-     * domain of errors. This should be at most 63 characters and match a
-     * regular expression of `[A-Z][A-Z0-9_]+[A-Z0-9]`, which represents
-     * UPPER_SNAKE_CASE.
+     * domain of errors. This should be at most 63 characters and match
+     * /[A-Z0-9_]+/.
      *
      * Generated from protobuf field <code>string reason = 1;</code>
      * @param string $var

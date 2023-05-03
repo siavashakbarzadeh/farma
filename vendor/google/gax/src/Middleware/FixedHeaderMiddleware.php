@@ -57,7 +57,7 @@ class FixedHeaderMiddleware
 
     public function __invoke(Call $call, array $options)
     {
-        $userHeaders = $options['headers'] ?? [];
+        $userHeaders = isset($options['headers']) ? $options['headers'] : [];
         if ($this->overrideUserHeaders) {
             $options['headers'] = $this->headers + $userHeaders;
         } else {

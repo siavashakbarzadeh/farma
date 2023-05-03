@@ -2,8 +2,6 @@
 
 namespace  Kris\LaravelFormBuilder\Fields;
 
-use Illuminate\Support\Arr;
-
 class ChoiceType extends ParentType
 {
     /**
@@ -34,7 +32,7 @@ class ChoiceType extends ParentType
         $expanded = $this->options['expanded'];
         $multiple = $this->options['multiple'];
 
-        if (!$expanded && $multiple) {
+        if ($multiple) {
             $this->options['attr']['multiple'] = true;
         }
 
@@ -104,14 +102,12 @@ class ChoiceType extends ParentType
     {
         $multiple = $this->getOption('multiple') ? '[]' : '';
 
-        $attr = $this->options['attr']?? [];
-        $attr = Arr::except($attr, ['class', 'multiple', 'id', 'name']);
         foreach ((array)$this->options['choices'] as $key => $choice) {
             $id = str_replace('.', '_', $this->getNameKey()) . '_' . $key;
             $options = $this->formHelper->mergeOptions(
                 $this->getOption('choice_options'),
                 [
-                    'attr'       => array_merge(['id' => $id], $this->options['option_attributes'][$key] ?? $attr),
+                    'attr'       => array_merge(['id' => $id], $this->options['option_attributes'][$key] ?? []),
                     'label_attr' => ['for' => $id],
                     'label'      => $choice,
                     'checked'    => in_array($key, (array)$this->options[$this->valueProperty]),
@@ -152,25 +148,15 @@ class ChoiceType extends ParentType
     {
         $defaults = parent::setDefaultClasses($options);
         $choice_type = $this->determineChoiceField();
-        Arr::forget($defaults, 'attr.class');
 
         $wrapper_class = $this->formHelper->getConfig('defaults.' . $this->type . '.' . $choice_type . '_wrapper_class', '');
         if ($wrapper_class) {
             $defaults['wrapper']['class'] = (isset($defaults['wrapper']['class']) ? $defaults['wrapper']['class'] . ' ' : '') . $wrapper_class;
         }
 
-        $choice_wrapper_class = $this->formHelper->getConfig(
-            'defaults.' . $this->type . '.choice_options.wrapper_class',
-            $this->formHelper->getConfig('defaults.' . $this->type . '.choice_options.' . $choice_type . '.wrapper_class', '')
-        );
-        $choice_label_class = $this->formHelper->getConfig(
-            'defaults.' . $this->type . '.choice_options.label_class',
-            $this->formHelper->getConfig('defaults.' . $this->type . '.choice_options.' . $choice_type . '.label_class', '')
-        );
-        $choice_field_class = $this->formHelper->getConfig(
-            'defaults.' . $this->type . '.choice_options.field_class',
-            $this->formHelper->getConfig('defaults.' . $this->type . '.choice_options.' . $choice_type . '.field_class', '')
-        );
+        $choice_wrapper_class = $this->formHelper->getConfig('defaults.' . $this->type . '.choice_options.wrapper_class', '');
+        $choice_label_class = $this->formHelper->getConfig('defaults.' . $this->type . '.choice_options.label_class', '');
+        $choice_field_class = $this->formHelper->getConfig('defaults.' . $this->type . '.choice_options.field_class', '');
 
         if ($choice_wrapper_class) {
             $defaults['choice_options']['wrapper']['class'] = $choice_wrapper_class;

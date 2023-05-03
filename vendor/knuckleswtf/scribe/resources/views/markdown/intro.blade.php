@@ -1,9 +1,9 @@
-# {{ __("scribe::headers.introduction") }}
+# Introduction
 
 {!! $description !!}
 
 <aside>
-    <strong>{{ __("scribe::base_url") }}</strong>: <code>{!! $baseUrl !!}</code>
+    <strong>Base URL</strong>: <code>{!! $baseUrl !!}</code>
 </aside>
 
 {!! $introText !!}

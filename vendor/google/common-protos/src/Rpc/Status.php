@@ -21,8 +21,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Status extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The status code, which should be an enum value of
-     * [google.rpc.Code][google.rpc.Code].
+     * The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
      *
      * Generated from protobuf field <code>int32 code = 1;</code>
      */
@@ -30,8 +29,7 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * A developer-facing error message, which should be in English. Any
      * user-facing error message should be localized and sent in the
-     * [google.rpc.Status.details][google.rpc.Status.details] field, or localized
-     * by the client.
+     * [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
      *
      * Generated from protobuf field <code>string message = 2;</code>
      */
@@ -51,14 +49,12 @@ class Status extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $code
-     *           The status code, which should be an enum value of
-     *           [google.rpc.Code][google.rpc.Code].
+     *           The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
      *     @type string $message
      *           A developer-facing error message, which should be in English. Any
      *           user-facing error message should be localized and sent in the
-     *           [google.rpc.Status.details][google.rpc.Status.details] field, or localized
-     *           by the client.
-     *     @type array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $details
+     *           [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
+     *     @type \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $details
      *           A list of messages that carry the error details.  There is a common set of
      *           message types for APIs to use.
      * }
@@ -69,8 +65,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status code, which should be an enum value of
-     * [google.rpc.Code][google.rpc.Code].
+     * The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
      *
      * Generated from protobuf field <code>int32 code = 1;</code>
      * @return int
@@ -81,8 +76,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status code, which should be an enum value of
-     * [google.rpc.Code][google.rpc.Code].
+     * The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
      *
      * Generated from protobuf field <code>int32 code = 1;</code>
      * @param int $var
@@ -99,8 +93,7 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * A developer-facing error message, which should be in English. Any
      * user-facing error message should be localized and sent in the
-     * [google.rpc.Status.details][google.rpc.Status.details] field, or localized
-     * by the client.
+     * [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
      *
      * Generated from protobuf field <code>string message = 2;</code>
      * @return string
@@ -113,8 +106,7 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * A developer-facing error message, which should be in English. Any
      * user-facing error message should be localized and sent in the
-     * [google.rpc.Status.details][google.rpc.Status.details] field, or localized
-     * by the client.
+     * [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
      *
      * Generated from protobuf field <code>string message = 2;</code>
      * @param string $var
@@ -145,7 +137,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * message types for APIs to use.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Any details = 3;</code>
-     * @param array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDetails($var)

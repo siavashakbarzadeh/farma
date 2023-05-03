@@ -20,13 +20,13 @@ class CustomHttpPattern extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string kind = 1;</code>
      */
-    protected $kind = '';
+    private $kind = '';
     /**
      * The path matched by this custom verb.
      *
      * Generated from protobuf field <code>string path = 2;</code>
      */
-    protected $path = '';
+    private $path = '';
 
     /**
      * Constructor.

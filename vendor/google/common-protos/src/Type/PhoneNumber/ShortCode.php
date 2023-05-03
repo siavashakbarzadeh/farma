@@ -122,4 +122,3 @@ class ShortCode extends \Google\Protobuf\Internal\Message
 
 }
 
-

@@ -33,39 +33,39 @@ class Distribution extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 count = 1;</code>
      */
-    protected $count = 0;
+    private $count = 0;
     /**
      * The arithmetic mean of the values in the population. If `count` is zero
      * then this field must be zero.
      *
      * Generated from protobuf field <code>double mean = 2;</code>
      */
-    protected $mean = 0.0;
+    private $mean = 0.0;
     /**
      * The sum of squared deviations from the mean of the values in the
      * population. For values x_i this is:
      *     Sum[i=1..n]((x_i - mean)^2)
-     * Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition
+     * Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      * describes Welford's method for accumulating this sum in one pass.
      * If `count` is zero then this field must be zero.
      *
      * Generated from protobuf field <code>double sum_of_squared_deviation = 3;</code>
      */
-    protected $sum_of_squared_deviation = 0.0;
+    private $sum_of_squared_deviation = 0.0;
     /**
      * If specified, contains the range of the population values. The field
      * must not be present if the `count` is zero.
      *
      * Generated from protobuf field <code>.google.api.Distribution.Range range = 4;</code>
      */
-    protected $range = null;
+    private $range = null;
     /**
      * Defines the histogram bucket boundaries. If the distribution does not
      * contain a histogram, then omit this field.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions bucket_options = 6;</code>
      */
-    protected $bucket_options = null;
+    private $bucket_options = null;
     /**
      * The number of values in each bucket of the histogram, as described in
      * `bucket_options`. If the distribution does not have a histogram, then omit
@@ -108,7 +108,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      *           The sum of squared deviations from the mean of the values in the
      *           population. For values x_i this is:
      *               Sum[i=1..n]((x_i - mean)^2)
-     *           Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition
+     *           Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      *           describes Welford's method for accumulating this sum in one pass.
      *           If `count` is zero then this field must be zero.
      *     @type \Google\Api\Distribution\Range $range
@@ -117,7 +117,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      *     @type \Google\Api\Distribution\BucketOptions $bucket_options
      *           Defines the histogram bucket boundaries. If the distribution does not
      *           contain a histogram, then omit this field.
-     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $bucket_counts
+     *     @type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $bucket_counts
      *           The number of values in each bucket of the histogram, as described in
      *           `bucket_options`. If the distribution does not have a histogram, then omit
      *           this field. If there is a histogram, then the sum of the values in
@@ -131,7 +131,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      *           count for the underflow bucket (number 0). The next N-2 values are the
      *           counts for the finite buckets (number 1 through N-2). The N'th value in
      *           `bucket_counts` is the count for the overflow bucket (number N-1).
-     *     @type array<\Google\Api\Distribution\Exemplar>|\Google\Protobuf\Internal\RepeatedField $exemplars
+     *     @type \Google\Api\Distribution\Exemplar[]|\Google\Protobuf\Internal\RepeatedField $exemplars
      *           Must be in increasing order of `value` field.
      * }
      */
@@ -202,7 +202,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * The sum of squared deviations from the mean of the values in the
      * population. For values x_i this is:
      *     Sum[i=1..n]((x_i - mean)^2)
-     * Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition
+     * Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      * describes Welford's method for accumulating this sum in one pass.
      * If `count` is zero then this field must be zero.
      *
@@ -218,7 +218,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * The sum of squared deviations from the mean of the values in the
      * population. For values x_i this is:
      *     Sum[i=1..n]((x_i - mean)^2)
-     * Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition
+     * Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      * describes Welford's method for accumulating this sum in one pass.
      * If `count` is zero then this field must be zero.
      *
@@ -239,21 +239,11 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * must not be present if the `count` is zero.
      *
      * Generated from protobuf field <code>.google.api.Distribution.Range range = 4;</code>
-     * @return \Google\Api\Distribution\Range|null
+     * @return \Google\Api\Distribution\Range
      */
     public function getRange()
     {
         return $this->range;
-    }
-
-    public function hasRange()
-    {
-        return isset($this->range);
-    }
-
-    public function clearRange()
-    {
-        unset($this->range);
     }
 
     /**
@@ -266,7 +256,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      */
     public function setRange($var)
     {
-        GPBUtil::checkMessage($var, \Google\Api\Distribution\Range::class);
+        GPBUtil::checkMessage($var, \Google\Api\Distribution_Range::class);
         $this->range = $var;
 
         return $this;
@@ -277,21 +267,11 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * contain a histogram, then omit this field.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions bucket_options = 6;</code>
-     * @return \Google\Api\Distribution\BucketOptions|null
+     * @return \Google\Api\Distribution\BucketOptions
      */
     public function getBucketOptions()
     {
         return $this->bucket_options;
-    }
-
-    public function hasBucketOptions()
-    {
-        return isset($this->bucket_options);
-    }
-
-    public function clearBucketOptions()
-    {
-        unset($this->bucket_options);
     }
 
     /**
@@ -304,7 +284,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      */
     public function setBucketOptions($var)
     {
-        GPBUtil::checkMessage($var, \Google\Api\Distribution\BucketOptions::class);
+        GPBUtil::checkMessage($var, \Google\Api\Distribution_BucketOptions::class);
         $this->bucket_options = $var;
 
         return $this;
@@ -349,7 +329,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * `bucket_counts` is the count for the overflow bucket (number N-1).
      *
      * Generated from protobuf field <code>repeated int64 bucket_counts = 7;</code>
-     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBucketCounts($var)
@@ -375,7 +355,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * Must be in increasing order of `value` field.
      *
      * Generated from protobuf field <code>repeated .google.api.Distribution.Exemplar exemplars = 10;</code>
-     * @param array<\Google\Api\Distribution\Exemplar>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Api\Distribution\Exemplar[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExemplars($var)

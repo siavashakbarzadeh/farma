@@ -7,56 +7,56 @@ namespace Google\Type;
 use UnexpectedValueException;
 
 /**
- * Represents a day of the week.
+ * Represents a day of week.
  *
  * Protobuf type <code>google.type.DayOfWeek</code>
  */
 class DayOfWeek
 {
     /**
-     * The day of the week is unspecified.
+     * The unspecified day-of-week.
      *
      * Generated from protobuf enum <code>DAY_OF_WEEK_UNSPECIFIED = 0;</code>
      */
     const DAY_OF_WEEK_UNSPECIFIED = 0;
     /**
-     * Monday
+     * The day-of-week of Monday.
      *
      * Generated from protobuf enum <code>MONDAY = 1;</code>
      */
     const MONDAY = 1;
     /**
-     * Tuesday
+     * The day-of-week of Tuesday.
      *
      * Generated from protobuf enum <code>TUESDAY = 2;</code>
      */
     const TUESDAY = 2;
     /**
-     * Wednesday
+     * The day-of-week of Wednesday.
      *
      * Generated from protobuf enum <code>WEDNESDAY = 3;</code>
      */
     const WEDNESDAY = 3;
     /**
-     * Thursday
+     * The day-of-week of Thursday.
      *
      * Generated from protobuf enum <code>THURSDAY = 4;</code>
      */
     const THURSDAY = 4;
     /**
-     * Friday
+     * The day-of-week of Friday.
      *
      * Generated from protobuf enum <code>FRIDAY = 5;</code>
      */
     const FRIDAY = 5;
     /**
-     * Saturday
+     * The day-of-week of Saturday.
      *
      * Generated from protobuf enum <code>SATURDAY = 6;</code>
      */
     const SATURDAY = 6;
     /**
-     * Sunday
+     * The day-of-week of Sunday.
      *
      * Generated from protobuf enum <code>SUNDAY = 7;</code>
      */

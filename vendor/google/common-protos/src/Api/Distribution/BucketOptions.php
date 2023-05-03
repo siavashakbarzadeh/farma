@@ -53,16 +53,11 @@ class BucketOptions extends \Google\Protobuf\Internal\Message
      * The linear bucket.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions.Linear linear_buckets = 1;</code>
-     * @return \Google\Api\Distribution\BucketOptions\Linear|null
+     * @return \Google\Api\Distribution\BucketOptions\Linear
      */
     public function getLinearBuckets()
     {
         return $this->readOneof(1);
-    }
-
-    public function hasLinearBuckets()
-    {
-        return $this->hasOneof(1);
     }
 
     /**
@@ -74,7 +69,7 @@ class BucketOptions extends \Google\Protobuf\Internal\Message
      */
     public function setLinearBuckets($var)
     {
-        GPBUtil::checkMessage($var, \Google\Api\Distribution\BucketOptions\Linear::class);
+        GPBUtil::checkMessage($var, \Google\Api\Distribution_BucketOptions_Linear::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -84,16 +79,11 @@ class BucketOptions extends \Google\Protobuf\Internal\Message
      * The exponential buckets.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions.Exponential exponential_buckets = 2;</code>
-     * @return \Google\Api\Distribution\BucketOptions\Exponential|null
+     * @return \Google\Api\Distribution\BucketOptions\Exponential
      */
     public function getExponentialBuckets()
     {
         return $this->readOneof(2);
-    }
-
-    public function hasExponentialBuckets()
-    {
-        return $this->hasOneof(2);
     }
 
     /**
@@ -105,7 +95,7 @@ class BucketOptions extends \Google\Protobuf\Internal\Message
      */
     public function setExponentialBuckets($var)
     {
-        GPBUtil::checkMessage($var, \Google\Api\Distribution\BucketOptions\Exponential::class);
+        GPBUtil::checkMessage($var, \Google\Api\Distribution_BucketOptions_Exponential::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -115,16 +105,11 @@ class BucketOptions extends \Google\Protobuf\Internal\Message
      * The explicit buckets.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions.Explicit explicit_buckets = 3;</code>
-     * @return \Google\Api\Distribution\BucketOptions\Explicit|null
+     * @return \Google\Api\Distribution\BucketOptions\Explicit
      */
     public function getExplicitBuckets()
     {
         return $this->readOneof(3);
-    }
-
-    public function hasExplicitBuckets()
-    {
-        return $this->hasOneof(3);
     }
 
     /**
@@ -136,7 +121,7 @@ class BucketOptions extends \Google\Protobuf\Internal\Message
      */
     public function setExplicitBuckets($var)
     {
-        GPBUtil::checkMessage($var, \Google\Api\Distribution\BucketOptions\Explicit::class);
+        GPBUtil::checkMessage($var, \Google\Api\Distribution_BucketOptions_Explicit::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -152,4 +137,6 @@ class BucketOptions extends \Google\Protobuf\Internal\Message
 
 }
 
+// Adding a class alias for backwards compatibility with the previous class name.
+class_alias(BucketOptions::class, \Google\Api\Distribution_BucketOptions::class);
 

@@ -69,6 +69,20 @@ Inc., 319 North First Ave., Sandpoint, Idaho, USA, 208-263-8178, Fax: 208-263-63
 <div class="Paragraph" dir="rtl">
 <h2 dir="ltr" id="example-1">
 <a href="#example-1" class="anchor"><img src="./images/link_icon.png" width="16" border="0"></a>Example Output 1:</h2>
+    <font face="Tahoma" size="2">
+    <form action="ar_query.php" method="GET" name="search">
+        إبحث عن (Search for): <input type="text" name="keyword" value="<?php echo $_GET['keyword']; ?>"> 
+        <input type="submit" value="بحث (Go)" name="submit" />
+         (مثال: فلسطينيون)<br />
+        <blockquote><blockquote><blockquote>
+            <input type="radio" name="mode" value="0" <?php if ($_GET['mode'] == '0' || !isset($_GET['mode'])) echo "checked"; ?> /> أي من الكلمات (Any word)
+            <input type="radio" name="mode" value="1" <?php if ($_GET['mode'] == '1') echo "checked"; ?> /> كل الكلمات (All words)
+        </blockquote></blockquote></blockquote>
+    </form>
+
+<?php if (!isset($_GET['keyword'])) { $_GET['keyword'] = 'فلسطينيون'; } ?>
+    <hr />
+    نتائج البحث عن (Results of) <b><?php echo $_GET['keyword']; ?></b>:<br />
 <?php
     /*
       // Autoload files using Composer autoload
@@ -78,23 +92,23 @@ Inc., 319 North First Ave., Sandpoint, Idaho, USA, 208-263-8178, Fax: 208-263-63
     require '../src/Arabic.php';
     $Arabic = new \ArPHP\I18N\Arabic();
         
-    echo 'نتائج البحث عن <b>فلسطينيون</b>:<br />';
-    echo $Arabic->arQueryAllForms('فلسطينيون');
-    
-    $keyword = 'فلسطينيون';
+    echo $Arabic->arQueryAllForms($_GET['keyword']);
+    $keyword = $_GET['keyword'];
     $keyword = str_replace('\"', '"', $keyword);
 
     $Arabic->setQueryStrFields('field');
-    $Arabic->setQueryMode(0); // 0 for any word, 1 for all words
+    $Arabic->setQueryMode($_GET['mode']);
 
     $strCondition = $Arabic->arQueryWhereCondition($keyword);
     $strOrderBy   = $Arabic->arQueryOrderBy($keyword);
 
     $StrSQL = "SELECT `field` FROM `table` WHERE $strCondition ORDER BY $strOrderBy";
-    
-    echo '<hr />صيغة استعلام قاعدة البيانات <span dir="ltr">(SQL Query Statement)</span><br />';
-    echo '<pre dir="ltr" style="background-color: #e0e0e0; padding: 5px">' . $StrSQL . '</pre>';
 ?>
+
+    <hr />
+    صيغة استعلام قاعدة البيانات <span dir="ltr">(SQL Query Statement)</span>
+    <br /><textarea dir="ltr" align="left" cols="80" rows="4"><?php echo $StrSQL; ?></textarea>
+
 </div><br />
 <div class="Paragraph">
 <h2 dir="ltr">Example Code 1:</h2>
@@ -103,22 +117,17 @@ $code = <<< END
 <?php
     \$Arabic = new \\ArPHP\\I18N\\Arabic();
         
-    echo 'نتائج البحث عن <b>فلسطينيون</b>:<br />';
-    echo \$Arabic->arQueryAllForms('فلسطينيون');
-    
-    \$keyword = 'فلسطينيون';
+    echo \$Arabic->arQueryAllForms(\$_GET['keyword']);
+    \$keyword = \$_GET['keyword'];
     \$keyword = str_replace('\\"', '"', \$keyword);
 
     \$Arabic->setQueryStrFields('field');
-    \$Arabic->setQueryMode(0);  // 0 for any word, 1 for all words
+    \$Arabic->setQueryMode(\$_GET['mode']);
 
     \$strCondition = \$Arabic->arQueryWhereCondition(\$keyword);
     \$strOrderBy   = \$Arabic->arQueryOrderBy(\$keyword);
 
-    \$StrSQL = "SELECT `field` FROM `table` WHERE \$strCondition ORDER BY \$strOrderBy";
-    
-    echo '<hr />صيغة استعلام قاعدة البيانات <span dir="ltr">(SQL Query Statement)</span><br />';
-    echo '<pre dir="ltr" style="background-color: #e0e0e0; padding: 5px">' . \$StrSQL . '</pre>';
+    \$SQL = "SELECT `field` FROM `table` WHERE \$strCondition ORDER BY \$strOrderBy";
 END;
 
 highlight_string($code);

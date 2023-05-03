@@ -92,7 +92,9 @@ trait HttpUnaryTransportTrait
      */
     private static function buildCommonHeaders(array $options)
     {
-        $headers = $options['headers'] ?? [];
+        $headers = isset($options['headers'])
+            ? $options['headers']
+            : [];
 
         if (!is_array($headers)) {
             throw new \InvalidArgumentException(
@@ -103,7 +105,9 @@ trait HttpUnaryTransportTrait
         // If not already set, add an auth header to the request
         if (!isset($headers['Authorization']) && isset($options['credentialsWrapper'])) {
             $credentialsWrapper = $options['credentialsWrapper'];
-            $audience = $options['audience'] ?? null;
+            $audience = isset($options['audience'])
+                ? $options['audience']
+                : null;
             $callback = $credentialsWrapper
                 ->getAuthorizationHeaderCallback($audience);
             // Prevent unexpected behavior, as the authorization header callback

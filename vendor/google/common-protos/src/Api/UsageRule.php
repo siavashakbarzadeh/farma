@@ -35,19 +35,18 @@ class UsageRule extends \Google\Protobuf\Internal\Message
     /**
      * Selects the methods to which this rule applies. Use '*' to indicate all
      * methods in all APIs.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
-     * details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      */
-    protected $selector = '';
+    private $selector = '';
     /**
      * If true, the selected method allows unregistered calls, e.g. calls
      * that don't identify any user or application.
      *
      * Generated from protobuf field <code>bool allow_unregistered_calls = 2;</code>
      */
-    protected $allow_unregistered_calls = false;
+    private $allow_unregistered_calls = false;
     /**
      * If true, the selected method should skip service control and the control
      * plane features, such as quota and billing, will not be available.
@@ -56,7 +55,7 @@ class UsageRule extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool skip_service_control = 3;</code>
      */
-    protected $skip_service_control = false;
+    private $skip_service_control = false;
 
     /**
      * Constructor.
@@ -67,8 +66,7 @@ class UsageRule extends \Google\Protobuf\Internal\Message
      *     @type string $selector
      *           Selects the methods to which this rule applies. Use '*' to indicate all
      *           methods in all APIs.
-     *           Refer to [selector][google.api.DocumentationRule.selector] for syntax
-     *           details.
+     *           Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      *     @type bool $allow_unregistered_calls
      *           If true, the selected method allows unregistered calls, e.g. calls
      *           that don't identify any user or application.
@@ -87,8 +85,7 @@ class UsageRule extends \Google\Protobuf\Internal\Message
     /**
      * Selects the methods to which this rule applies. Use '*' to indicate all
      * methods in all APIs.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
-     * details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      * @return string
@@ -101,8 +98,7 @@ class UsageRule extends \Google\Protobuf\Internal\Message
     /**
      * Selects the methods to which this rule applies. Use '*' to indicate all
      * methods in all APIs.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
-     * details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      * @param string $var

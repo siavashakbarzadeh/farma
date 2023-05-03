@@ -307,11 +307,11 @@ class ApiException extends Exception
 
         if (isset($decoded['error']) && $decoded['error']) {
             $error = $decoded['error'];
-            $basicMessage = $error['message'] ?? null;
+            $basicMessage = isset($error['message']) ? $error['message'] : null;
             $code = isset($error['status'])
                 ? ApiStatus::rpcCodeFromStatus($error['status'])
                 : $ex->getCode();
-            $metadata = $error['details'] ?? null;
+            $metadata = isset($error['details']) ? $error['details'] : null;
             return static::createFromRestApiResponse($basicMessage, $code, $metadata);
         }
         // Use the RPC code instead of the HTTP Status Code.

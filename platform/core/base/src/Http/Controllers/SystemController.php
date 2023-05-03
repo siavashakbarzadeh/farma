@@ -19,12 +19,8 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Menu;
@@ -139,14 +135,6 @@ class SystemController extends Controller
         }
 
         return redirect()->back();
-    }
-    public function adminswitchLang($lang)
-    {
-        if (array_key_exists($lang, Config::get('core.base.admin_languages'))) {
-            App::setLocale($lang);
-            Session::put('applocale', $lang);
-        }
-        return Redirect::back();
     }
 
     public function getMenuItemsCount(BaseHttpResponse $response)

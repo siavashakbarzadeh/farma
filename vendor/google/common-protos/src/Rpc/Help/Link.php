@@ -99,4 +99,6 @@ class Link extends \Google\Protobuf\Internal\Message
 
 }
 
+// Adding a class alias for backwards compatibility with the previous class name.
+class_alias(Link::class, \Google\Rpc\Help_Link::class);
 

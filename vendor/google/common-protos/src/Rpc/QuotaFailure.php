@@ -36,7 +36,7 @@ class QuotaFailure extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Rpc\QuotaFailure\Violation>|\Google\Protobuf\Internal\RepeatedField $violations
+     *     @type \Google\Rpc\QuotaFailure\Violation[]|\Google\Protobuf\Internal\RepeatedField $violations
      *           Describes all quota violations.
      * }
      */
@@ -60,7 +60,7 @@ class QuotaFailure extends \Google\Protobuf\Internal\Message
      * Describes all quota violations.
      *
      * Generated from protobuf field <code>repeated .google.rpc.QuotaFailure.Violation violations = 1;</code>
-     * @param array<\Google\Rpc\QuotaFailure\Violation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Rpc\QuotaFailure\Violation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setViolations($var)

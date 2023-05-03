@@ -22,7 +22,7 @@ class AuditConfigDelta extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
      */
-    protected $action = 0;
+    private $action = 0;
     /**
      * Specifies a service that was configured for Cloud Audit Logging.
      * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
@@ -31,7 +31,7 @@ class AuditConfigDelta extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string service = 2;</code>
      */
-    protected $service = '';
+    private $service = '';
     /**
      * A single identity that is exempted from "data access" audit
      * logging for the `service` specified above.
@@ -39,7 +39,7 @@ class AuditConfigDelta extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string exempted_member = 3;</code>
      */
-    protected $exempted_member = '';
+    private $exempted_member = '';
     /**
      * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
      * enabled, and cannot be configured.
@@ -47,7 +47,7 @@ class AuditConfigDelta extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string log_type = 4;</code>
      */
-    protected $log_type = '';
+    private $log_type = '';
 
     /**
      * Constructor.
@@ -100,7 +100,7 @@ class AuditConfigDelta extends \Google\Protobuf\Internal\Message
      */
     public function setAction($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Iam\V1\AuditConfigDelta\Action::class);
+        GPBUtil::checkEnum($var, \Google\Cloud\Iam\V1\AuditConfigDelta_Action::class);
         $this->action = $var;
 
         return $this;

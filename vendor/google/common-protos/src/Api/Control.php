@@ -9,23 +9,21 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Selects and configures the service controller used by the service.
- * Example:
- *     control:
- *       environment: servicecontrol.googleapis.com
+ * Selects and configures the service controller used by the service.  The
+ * service controller handles features like abuse, quota, billing, logging,
+ * monitoring, etc.
  *
  * Generated from protobuf message <code>google.api.Control</code>
  */
 class Control extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The service controller environment to use. If empty, no control plane
-     * feature (like quota and billing) will be enabled. The recommended value for
-     * most services is servicecontrol.googleapis.com
+     * The service control environment to use. If empty, no control plane
+     * feature (like quota and billing) will be enabled.
      *
      * Generated from protobuf field <code>string environment = 1;</code>
      */
-    protected $environment = '';
+    private $environment = '';
 
     /**
      * Constructor.
@@ -34,9 +32,8 @@ class Control extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $environment
-     *           The service controller environment to use. If empty, no control plane
-     *           feature (like quota and billing) will be enabled. The recommended value for
-     *           most services is servicecontrol.googleapis.com
+     *           The service control environment to use. If empty, no control plane
+     *           feature (like quota and billing) will be enabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -45,9 +42,8 @@ class Control extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The service controller environment to use. If empty, no control plane
-     * feature (like quota and billing) will be enabled. The recommended value for
-     * most services is servicecontrol.googleapis.com
+     * The service control environment to use. If empty, no control plane
+     * feature (like quota and billing) will be enabled.
      *
      * Generated from protobuf field <code>string environment = 1;</code>
      * @return string
@@ -58,9 +54,8 @@ class Control extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The service controller environment to use. If empty, no control plane
-     * feature (like quota and billing) will be enabled. The recommended value for
-     * most services is servicecontrol.googleapis.com
+     * The service control environment to use. If empty, no control plane
+     * feature (like quota and billing) will be enabled.
      *
      * Generated from protobuf field <code>string environment = 1;</code>
      * @param string $var

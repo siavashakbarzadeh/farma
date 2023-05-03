@@ -16,35 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class FieldViolation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A path that leads to a field in the request body. The value will be a
+     * A path leading to a field in the request body. The value will be a
      * sequence of dot-separated identifiers that identify a protocol buffer
-     * field.
-     * Consider the following:
-     *     message CreateContactRequest {
-     *       message EmailAddress {
-     *         enum Type {
-     *           TYPE_UNSPECIFIED = 0;
-     *           HOME = 1;
-     *           WORK = 2;
-     *         }
-     *         optional string email = 1;
-     *         repeated EmailType type = 2;
-     *       }
-     *       string full_name = 1;
-     *       repeated EmailAddress email_addresses = 2;
-     *     }
-     * In this example, in proto `field` could take one of the following values:
-     * * `full_name` for a violation in the `full_name` value
-     * * `email_addresses[1].email` for a violation in the `email` field of the
-     *   first `email_addresses` message
-     * * `email_addresses[3].type[2]` for a violation in the second `type`
-     *   value in the third `email_addresses` message.
-     * In JSON, the same values are represented as:
-     * * `fullName` for a violation in the `fullName` value
-     * * `emailAddresses[1].email` for a violation in the `email` field of the
-     *   first `emailAddresses` message
-     * * `emailAddresses[3].type[2]` for a violation in the second `type`
-     *   value in the third `emailAddresses` message.
+     * field. E.g., "field_violations.field" would identify this field.
      *
      * Generated from protobuf field <code>string field = 1;</code>
      */
@@ -63,35 +37,9 @@ class FieldViolation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $field
-     *           A path that leads to a field in the request body. The value will be a
+     *           A path leading to a field in the request body. The value will be a
      *           sequence of dot-separated identifiers that identify a protocol buffer
-     *           field.
-     *           Consider the following:
-     *               message CreateContactRequest {
-     *                 message EmailAddress {
-     *                   enum Type {
-     *                     TYPE_UNSPECIFIED = 0;
-     *                     HOME = 1;
-     *                     WORK = 2;
-     *                   }
-     *                   optional string email = 1;
-     *                   repeated EmailType type = 2;
-     *                 }
-     *                 string full_name = 1;
-     *                 repeated EmailAddress email_addresses = 2;
-     *               }
-     *           In this example, in proto `field` could take one of the following values:
-     *           * `full_name` for a violation in the `full_name` value
-     *           * `email_addresses[1].email` for a violation in the `email` field of the
-     *             first `email_addresses` message
-     *           * `email_addresses[3].type[2]` for a violation in the second `type`
-     *             value in the third `email_addresses` message.
-     *           In JSON, the same values are represented as:
-     *           * `fullName` for a violation in the `fullName` value
-     *           * `emailAddresses[1].email` for a violation in the `email` field of the
-     *             first `emailAddresses` message
-     *           * `emailAddresses[3].type[2]` for a violation in the second `type`
-     *             value in the third `emailAddresses` message.
+     *           field. E.g., "field_violations.field" would identify this field.
      *     @type string $description
      *           A description of why the request element is bad.
      * }
@@ -102,35 +50,9 @@ class FieldViolation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A path that leads to a field in the request body. The value will be a
+     * A path leading to a field in the request body. The value will be a
      * sequence of dot-separated identifiers that identify a protocol buffer
-     * field.
-     * Consider the following:
-     *     message CreateContactRequest {
-     *       message EmailAddress {
-     *         enum Type {
-     *           TYPE_UNSPECIFIED = 0;
-     *           HOME = 1;
-     *           WORK = 2;
-     *         }
-     *         optional string email = 1;
-     *         repeated EmailType type = 2;
-     *       }
-     *       string full_name = 1;
-     *       repeated EmailAddress email_addresses = 2;
-     *     }
-     * In this example, in proto `field` could take one of the following values:
-     * * `full_name` for a violation in the `full_name` value
-     * * `email_addresses[1].email` for a violation in the `email` field of the
-     *   first `email_addresses` message
-     * * `email_addresses[3].type[2]` for a violation in the second `type`
-     *   value in the third `email_addresses` message.
-     * In JSON, the same values are represented as:
-     * * `fullName` for a violation in the `fullName` value
-     * * `emailAddresses[1].email` for a violation in the `email` field of the
-     *   first `emailAddresses` message
-     * * `emailAddresses[3].type[2]` for a violation in the second `type`
-     *   value in the third `emailAddresses` message.
+     * field. E.g., "field_violations.field" would identify this field.
      *
      * Generated from protobuf field <code>string field = 1;</code>
      * @return string
@@ -141,35 +63,9 @@ class FieldViolation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A path that leads to a field in the request body. The value will be a
+     * A path leading to a field in the request body. The value will be a
      * sequence of dot-separated identifiers that identify a protocol buffer
-     * field.
-     * Consider the following:
-     *     message CreateContactRequest {
-     *       message EmailAddress {
-     *         enum Type {
-     *           TYPE_UNSPECIFIED = 0;
-     *           HOME = 1;
-     *           WORK = 2;
-     *         }
-     *         optional string email = 1;
-     *         repeated EmailType type = 2;
-     *       }
-     *       string full_name = 1;
-     *       repeated EmailAddress email_addresses = 2;
-     *     }
-     * In this example, in proto `field` could take one of the following values:
-     * * `full_name` for a violation in the `full_name` value
-     * * `email_addresses[1].email` for a violation in the `email` field of the
-     *   first `email_addresses` message
-     * * `email_addresses[3].type[2]` for a violation in the second `type`
-     *   value in the third `email_addresses` message.
-     * In JSON, the same values are represented as:
-     * * `fullName` for a violation in the `fullName` value
-     * * `emailAddresses[1].email` for a violation in the `email` field of the
-     *   first `emailAddresses` message
-     * * `emailAddresses[3].type[2]` for a violation in the second `type`
-     *   value in the third `emailAddresses` message.
+     * field. E.g., "field_violations.field" would identify this field.
      *
      * Generated from protobuf field <code>string field = 1;</code>
      * @param string $var
@@ -211,4 +107,6 @@ class FieldViolation extends \Google\Protobuf\Internal\Message
 
 }
 
+// Adding a class alias for backwards compatibility with the previous class name.
+class_alias(FieldViolation::class, \Google\Rpc\BadRequest_FieldViolation::class);
 

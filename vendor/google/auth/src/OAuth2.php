@@ -216,13 +216,6 @@ class OAuth2 implements FetchAuthTokenInterface
     private $idToken;
 
     /**
-     * The scopes granted to the current access token
-     *
-     * @var string
-     */
-    private $grantedScope;
-
-    /**
      * The lifetime in seconds of the current access token.
      *
      * @var ?int
@@ -551,9 +544,6 @@ class OAuth2 implements FetchAuthTokenInterface
         $response = $httpHandler($this->generateCredentialsRequest());
         $credentials = $this->parseTokenResponse($response);
         $this->updateToken($credentials);
-        if (isset($credentials['scope'])) {
-            $this->setGrantedScope($credentials['scope']);
-        }
 
         return $credentials;
     }
@@ -650,7 +640,6 @@ class OAuth2 implements FetchAuthTokenInterface
             'expires_in' => null,
             'expires_at' => null,
             'issued_at' => null,
-            'scope' => null,
         ], $config);
 
         $this->setExpiresAt($opts['expires_at']);
@@ -663,7 +652,6 @@ class OAuth2 implements FetchAuthTokenInterface
 
         $this->setAccessToken($opts['access_token']);
         $this->setIdToken($opts['id_token']);
-
         // The refresh token should only be updated if a value is explicitly
         // passed in, as some access token responses do not include a refresh
         // token.
@@ -1345,27 +1333,6 @@ class OAuth2 implements FetchAuthTokenInterface
     public function setIdToken($idToken)
     {
         $this->idToken = $idToken;
-    }
-
-    /**
-     * Get the granted scopes (if they exist) for the last fetched token.
-     *
-     * @return string|null
-     */
-    public function getGrantedScope()
-    {
-        return $this->grantedScope;
-    }
-
-    /**
-     * Sets the current ID token.
-     *
-     * @param string $grantedScope
-     * @return void
-     */
-    public function setGrantedScope($grantedScope)
-    {
-        $this->grantedScope = $grantedScope;
     }
 
     /**

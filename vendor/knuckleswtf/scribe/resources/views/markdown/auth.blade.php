@@ -1,7 +1,7 @@
-# {{ __("scribe::headers.auth") }}
+# Authenticating requests
 
 @if(!$isAuthed)
-{!! __("scribe::no_auth") !!}
+This API is not authenticated.
 @else
 {!! $authDescription !!}
 

@@ -253,7 +253,9 @@ class RestTransport implements TransportInterface
      */
     private function getCallOptions(array $options)
     {
-        $callOptions = $options['transportOptions']['restOptions'] ?? [];
+        $callOptions = isset($options['transportOptions']['restOptions'])
+            ? $options['transportOptions']['restOptions']
+            : [];
 
         if (isset($options['timeoutMillis'])) {
             $callOptions['timeout'] = $options['timeoutMillis'] / 1000;

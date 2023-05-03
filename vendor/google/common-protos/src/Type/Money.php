@@ -16,18 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class Money extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The three-letter currency code defined in ISO 4217.
+     * The 3-letter currency code defined in ISO 4217.
      *
      * Generated from protobuf field <code>string currency_code = 1;</code>
      */
-    protected $currency_code = '';
+    private $currency_code = '';
     /**
      * The whole units of the amount.
      * For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
      *
      * Generated from protobuf field <code>int64 units = 2;</code>
      */
-    protected $units = 0;
+    private $units = 0;
     /**
      * Number of nano (10^-9) units of the amount.
      * The value must be between -999,999,999 and +999,999,999 inclusive.
@@ -38,7 +38,7 @@ class Money extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 nanos = 3;</code>
      */
-    protected $nanos = 0;
+    private $nanos = 0;
 
     /**
      * Constructor.
@@ -47,7 +47,7 @@ class Money extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $currency_code
-     *           The three-letter currency code defined in ISO 4217.
+     *           The 3-letter currency code defined in ISO 4217.
      *     @type int|string $units
      *           The whole units of the amount.
      *           For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
@@ -66,7 +66,7 @@ class Money extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The three-letter currency code defined in ISO 4217.
+     * The 3-letter currency code defined in ISO 4217.
      *
      * Generated from protobuf field <code>string currency_code = 1;</code>
      * @return string
@@ -77,7 +77,7 @@ class Money extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The three-letter currency code defined in ISO 4217.
+     * The 3-letter currency code defined in ISO 4217.
      *
      * Generated from protobuf field <code>string currency_code = 1;</code>
      * @param string $var

@@ -21,7 +21,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    protected $resource = '';
+    private $resource = '';
     /**
      * REQUIRED: The complete policy to be applied to the `resource`. The size of
      * the policy is limited to a few 10s of KB. An empty policy is a
@@ -30,16 +30,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    protected $policy = null;
-    /**
-     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
-     * the fields in the mask will be modified. If no mask is provided, the
-     * following default mask is used:
-     * `paths: "bindings, etag"`
-     *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     */
-    protected $update_mask = null;
+    private $policy = null;
 
     /**
      * Constructor.
@@ -55,11 +46,6 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *           the policy is limited to a few 10s of KB. An empty policy is a
      *           valid policy but certain Cloud Platform services (such as Projects)
      *           might reject them.
-     *     @type \Google\Protobuf\FieldMask $update_mask
-     *           OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
-     *           the fields in the mask will be modified. If no mask is provided, the
-     *           following default mask is used:
-     *           `paths: "bindings, etag"`
      * }
      */
     public function __construct($data = NULL) {
@@ -102,21 +88,11 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * might reject them.
      *
      * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Iam\V1\Policy|null
+     * @return \Google\Cloud\Iam\V1\Policy
      */
     public function getPolicy()
     {
         return $this->policy;
-    }
-
-    public function hasPolicy()
-    {
-        return isset($this->policy);
-    }
-
-    public function clearPolicy()
-    {
-        unset($this->policy);
     }
 
     /**
@@ -133,48 +109,6 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Iam\V1\Policy::class);
         $this->policy = $var;
-
-        return $this;
-    }
-
-    /**
-     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
-     * the fields in the mask will be modified. If no mask is provided, the
-     * following default mask is used:
-     * `paths: "bindings, etag"`
-     *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask|null
-     */
-    public function getUpdateMask()
-    {
-        return $this->update_mask;
-    }
-
-    public function hasUpdateMask()
-    {
-        return isset($this->update_mask);
-    }
-
-    public function clearUpdateMask()
-    {
-        unset($this->update_mask);
-    }
-
-    /**
-     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
-     * the fields in the mask will be modified. If no mask is provided, the
-     * following default mask is used:
-     * `paths: "bindings, etag"`
-     *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @param \Google\Protobuf\FieldMask $var
-     * @return $this
-     */
-    public function setUpdateMask($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
-        $this->update_mask = $var;
 
         return $this;
     }

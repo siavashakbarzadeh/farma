@@ -10,8 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * User-defined authentication requirements, including support for
- * [JSON Web Token
- * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
+ * [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
  *
  * Generated from protobuf message <code>google.api.AuthRequirement</code>
  */
@@ -24,7 +23,7 @@ class AuthRequirement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string provider_id = 1;</code>
      */
-    protected $provider_id = '';
+    private $provider_id = '';
     /**
      * NOTE: This will be deprecated soon, once AuthProvider.audiences is
      * implemented and accepted in all the runtime components.
@@ -42,7 +41,7 @@ class AuthRequirement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string audiences = 2;</code>
      */
-    protected $audiences = '';
+    private $audiences = '';
 
     /**
      * Constructor.

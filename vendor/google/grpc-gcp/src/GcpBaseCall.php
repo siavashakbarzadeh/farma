@@ -38,7 +38,6 @@ abstract class GcpBaseCall
     protected $argument;
     protected $metadata;
     protected $options;
-    protected $deserialize;
 
     // In GCP extension, it is when a RPC calls "start", we pick a channel.
     // Thus we need to save the $me

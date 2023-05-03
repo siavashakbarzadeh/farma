@@ -11,8 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Represents a time of day. The date and time zone are either not significant
  * or are specified elsewhere. An API may choose to allow leap seconds. Related
- * types are [google.type.Date][google.type.Date] and
- * `google.protobuf.Timestamp`.
+ * types are [google.type.Date][google.type.Date] and `google.protobuf.Timestamp`.
  *
  * Generated from protobuf message <code>google.type.TimeOfDay</code>
  */
@@ -24,26 +23,26 @@ class TimeOfDay extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 hours = 1;</code>
      */
-    protected $hours = 0;
+    private $hours = 0;
     /**
      * Minutes of hour of day. Must be from 0 to 59.
      *
      * Generated from protobuf field <code>int32 minutes = 2;</code>
      */
-    protected $minutes = 0;
+    private $minutes = 0;
     /**
      * Seconds of minutes of the time. Must normally be from 0 to 59. An API may
      * allow the value 60 if it allows leap-seconds.
      *
      * Generated from protobuf field <code>int32 seconds = 3;</code>
      */
-    protected $seconds = 0;
+    private $seconds = 0;
     /**
      * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
      *
      * Generated from protobuf field <code>int32 nanos = 4;</code>
      */
-    protected $nanos = 0;
+    private $nanos = 0;
 
     /**
      * Constructor.

@@ -8,11 +8,6 @@ use Google\Cloud\ErrorReporting\V1beta1\ReportedErrorEvent;
 use Google\Cloud\ErrorReporting\V1beta1\SourceLocation;
 
 class StackdriverUtil{
-	protected $api;
-	protected $metrics;
-	protected $success;
-	protected $err_client;
-
 	function __construct($api){
 		$this->api = $api;
 		$this->metrics = [];

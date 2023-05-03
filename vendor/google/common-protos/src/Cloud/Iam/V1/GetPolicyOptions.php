@@ -16,24 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetPolicyOptions extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Optional. The maximum policy version that will be used to format the
-     * policy.
+     * Optional. The policy format version to be returned.
      * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
      * rejected.
-     * Requests for policies with any conditional role bindings must specify
-     * version 3. Policies with no conditional role bindings may specify any valid
-     * value or leave the field unset.
-     * The policy in the response might use the policy version that you specified,
-     * or it might use a lower policy version. For example, if you specify version
-     * 3, but the policy has no conditional role bindings, the response uses
-     * version 1.
-     * To learn which resources support conditions in their IAM policies, see the
-     * [IAM
-     * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * Requests for policies with any conditional bindings must specify version 3.
+     * Policies without any conditional bindings may specify any valid value or
+     * leave the field unset.
      *
      * Generated from protobuf field <code>int32 requested_policy_version = 1;</code>
      */
-    protected $requested_policy_version = 0;
+    private $requested_policy_version = 0;
 
     /**
      * Constructor.
@@ -42,20 +34,12 @@ class GetPolicyOptions extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $requested_policy_version
-     *           Optional. The maximum policy version that will be used to format the
-     *           policy.
+     *           Optional. The policy format version to be returned.
      *           Valid values are 0, 1, and 3. Requests specifying an invalid value will be
      *           rejected.
-     *           Requests for policies with any conditional role bindings must specify
-     *           version 3. Policies with no conditional role bindings may specify any valid
-     *           value or leave the field unset.
-     *           The policy in the response might use the policy version that you specified,
-     *           or it might use a lower policy version. For example, if you specify version
-     *           3, but the policy has no conditional role bindings, the response uses
-     *           version 1.
-     *           To learn which resources support conditions in their IAM policies, see the
-     *           [IAM
-     *           documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     *           Requests for policies with any conditional bindings must specify version 3.
+     *           Policies without any conditional bindings may specify any valid value or
+     *           leave the field unset.
      * }
      */
     public function __construct($data = NULL) {
@@ -64,20 +48,12 @@ class GetPolicyOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The maximum policy version that will be used to format the
-     * policy.
+     * Optional. The policy format version to be returned.
      * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
      * rejected.
-     * Requests for policies with any conditional role bindings must specify
-     * version 3. Policies with no conditional role bindings may specify any valid
-     * value or leave the field unset.
-     * The policy in the response might use the policy version that you specified,
-     * or it might use a lower policy version. For example, if you specify version
-     * 3, but the policy has no conditional role bindings, the response uses
-     * version 1.
-     * To learn which resources support conditions in their IAM policies, see the
-     * [IAM
-     * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * Requests for policies with any conditional bindings must specify version 3.
+     * Policies without any conditional bindings may specify any valid value or
+     * leave the field unset.
      *
      * Generated from protobuf field <code>int32 requested_policy_version = 1;</code>
      * @return int
@@ -88,20 +64,12 @@ class GetPolicyOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The maximum policy version that will be used to format the
-     * policy.
+     * Optional. The policy format version to be returned.
      * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
      * rejected.
-     * Requests for policies with any conditional role bindings must specify
-     * version 3. Policies with no conditional role bindings may specify any valid
-     * value or leave the field unset.
-     * The policy in the response might use the policy version that you specified,
-     * or it might use a lower policy version. For example, if you specify version
-     * 3, but the policy has no conditional role bindings, the response uses
-     * version 1.
-     * To learn which resources support conditions in their IAM policies, see the
-     * [IAM
-     * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * Requests for policies with any conditional bindings must specify version 3.
+     * Policies without any conditional bindings may specify any valid value or
+     * leave the field unset.
      *
      * Generated from protobuf field <code>int32 requested_policy_version = 1;</code>
      * @param int $var

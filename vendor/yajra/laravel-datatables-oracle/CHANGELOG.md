@@ -8,17 +8,6 @@
 
 ### [Unreleased]
 
-### [v10.4.0] - 2023-03-28
-
-- feat: Allow any callable in ->addColumn() #2977
-- fix: #2976
-
-### [v10.3.1] - 2023-02-20
-
-- fix: Fix anonymous resource collection data formatting #2944
-- fix: phpunit 10 deprecation #2955
-- fix: bump orchestra/testbench to 8 #2949
-
 ### [v10.3.0] - 2023-02-07
 
 - Add Laravel 10 compatibility #2948
@@ -118,8 +107,7 @@
 - Drop support for `ApiResourceDataTable`
 - PHP8 syntax / method signature changed
 
-[Unreleased]: https://github.com/yajra/laravel-datatables/compare/v10.3.1...10.x
-[v10.3.1]: https://github.com/yajra/laravel-datatables/compare/v10.3.1...v10.3.0
+[Unreleased]: https://github.com/yajra/laravel-datatables/compare/v10.3.0...10.x
 [v10.3.0]: https://github.com/yajra/laravel-datatables/compare/v10.3.0...v10.2.3
 [v10.2.3]: https://github.com/yajra/laravel-datatables/compare/v10.2.3...v10.2.2
 [v10.2.2]: https://github.com/yajra/laravel-datatables/compare/v10.2.2...v10.2.1
