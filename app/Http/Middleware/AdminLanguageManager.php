@@ -1,11 +1,11 @@
 <?php
 
-namespace Botble\Base\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 
-class TestMiddleware
+class AdminLanguageManager
 {
     /**
      * Handle an incoming request.

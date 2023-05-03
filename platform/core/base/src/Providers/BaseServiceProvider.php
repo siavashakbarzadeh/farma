@@ -128,7 +128,6 @@ class BaseServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->app['router']->pushMiddlewareToGroup('web', TestMiddleware::class);
         $this
             ->loadAndPublishConfigurations(['permissions', 'assets'])
             ->loadAndPublishViews()
