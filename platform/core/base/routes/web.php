@@ -105,4 +105,5 @@ Route::group(['namespace' => 'Botble\Base\Http\Controllers', 'middleware' => ['w
     });
 
     Route::get('settings-language/{alias}', [SystemController::class, 'getLanguage'])->name('settings.language');
+    Route::get('change-language/{lang}', [SystemController::class, 'adminswitchLang'])->name('Admin.lang.switch');
 });
