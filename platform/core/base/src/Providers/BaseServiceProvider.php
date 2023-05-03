@@ -136,7 +136,7 @@ class BaseServiceProvider extends ServiceProvider
             ->loadMigrations()
             ->publishAssets();
 
-        dd("ok");
+        $this->mergeConfigFrom(__DIR__.'/../../config/admin_languages.php','core.base.admin_languages');
 
         Schema::defaultStringLength(191);
 
