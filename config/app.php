@@ -185,7 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
-        \Botble\Base\Providers\BaseServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -195,6 +195,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        \Botble\Base\Providers\BaseServiceProvider::class,
 
     ],
 

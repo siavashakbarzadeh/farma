@@ -126,7 +126,7 @@ class BaseServiceProvider extends ServiceProvider
         });
     }
 
-    public function boot(): void
+    public function boot()
     {
         dd("salam");
         $this
