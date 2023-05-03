@@ -14,7 +14,7 @@
                 <p class="font-lg text-grey-700 mb-30">
                     {!! BaseHelper::clean(__('The link you clicked may be broken or the page may have been removed.<br> visit the <a href=":link"> <span> Homepage</span></a> or <a href=":mail"><span>Contact us</span></a> about the problem.', ['link' => route('public.index'), 'mail' => 'mailto:' . theme_option('email')])) !!}
                 </p>
-                @dd(phpversion())
+                {{phpversion()}}
                 @if (is_plugin_active('ecommerce'))
                     <form class="contact-form-style text-center" id="contact-form" action="{{ route('public.products') }}" method="GET">
                         <div class="row">
