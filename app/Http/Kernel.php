@@ -2,7 +2,7 @@
 
 namespace App\Http;
 
-use Botble\Base\Middleware\LanguageManager;
+use Botble\Base\Http\Middleware\LanguageManager;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
