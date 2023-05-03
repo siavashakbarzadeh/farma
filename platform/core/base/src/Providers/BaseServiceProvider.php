@@ -48,8 +48,6 @@ class BaseServiceProvider extends ServiceProvider
 {
     use LoadAndPublishDataTrait;
 
-    protected bool $defer = true;
-
     public function register(): void
     {
         $this->app->bind(ResourceRegistrar::class, function ($app) {
@@ -128,6 +126,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        dd("base called");
         $this
             ->loadAndPublishConfigurations(['permissions', 'assets'])
             ->loadAndPublishViews()

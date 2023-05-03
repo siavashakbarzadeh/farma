@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        dd(new BaseServiceProvider($this->app));
+//        dd(new BaseServiceProvider($this->app));
         $this->mergeConfigFrom(base_path('platform/core/base/config/admin_languages.php'),'core.base.admin_languages');
     }
 }
