@@ -10,6 +10,7 @@ use Botble\Base\Http\Middleware\CoreMiddleware;
 use Botble\Base\Http\Middleware\DisableInDemoModeMiddleware;
 use Botble\Base\Http\Middleware\HttpsProtocolMiddleware;
 use Botble\Base\Http\Middleware\LocaleMiddleware;
+use Botble\Base\Http\Middleware\TestMiddleware;
 use Botble\Base\Models\AdminNotification;
 use Botble\Base\Models\MetaBox as MetaBoxModel;
 use Botble\Base\Repositories\Caches\MetaBoxCacheDecorator;
@@ -46,8 +47,6 @@ use Throwable;
 class BaseServiceProvider extends ServiceProvider
 {
     use LoadAndPublishDataTrait;
-
-    protected bool $defer = true;
 
     public function register(): void
     {
@@ -125,8 +124,9 @@ class BaseServiceProvider extends ServiceProvider
         });
     }
 
-    public function boot(): void
+    public function boot()
     {
+        dd("base called");
         $this
             ->loadAndPublishConfigurations(['permissions', 'assets'])
             ->loadAndPublishViews()
@@ -134,6 +134,8 @@ class BaseServiceProvider extends ServiceProvider
             ->loadRoutes()
             ->loadMigrations()
             ->publishAssets();
+
+
 
         Schema::defaultStringLength(191);
 
