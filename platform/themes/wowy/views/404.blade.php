@@ -4,7 +4,7 @@
 @endphp
 
 {!! Theme::partial('header') !!}
-
+@dd(phpversion())
 <main class="main page-404">
     <div class="container">
         <div class="row align-items-center text-center">
