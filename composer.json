@@ -51,7 +51,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Botble\\Base": "platform/core/base/src"
+            "Botble\\Base\\": "platform/core/base/src/"
         }
     },
     "autoload-dev": {
